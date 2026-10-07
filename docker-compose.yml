@@ -1,0 +1,18 @@
+# Backend + Postgres. The web client runs separately (see README).
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: offline_poc
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5432:5432"]
+  backend:
+    build: ./backend
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_DB: offline_poc
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["8000:8000"]
+    depends_on: [db]

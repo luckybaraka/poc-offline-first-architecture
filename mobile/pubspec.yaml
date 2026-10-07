@@ -1,0 +1,22 @@
+name: offline_poc_mobile
+description: Offline-first PoC, Flutter client. Same sync API as the web client.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.3.3          # layer 1 + 2: local SQLite database and the operation queue
+  path: ^1.9.0
+  http: ^1.2.2             # talking to the sync API
+  connectivity_plus: ^6.0.5 # layer 3: knowing when the network comes and goes
+  uuid: ^4.4.2             # record and operation IDs made on the device
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
