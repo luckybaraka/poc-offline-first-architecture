@@ -23,6 +23,7 @@ You need Python 3.12 and Node 20 or 22.
 cd backend
 python -m venv .venv
 .venv\Scripts\activate          # Windows   (macOS/Linux: source .venv/bin/activate)
+source .venv/Scripts/activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
